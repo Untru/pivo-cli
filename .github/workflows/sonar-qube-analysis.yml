@@ -55,7 +55,7 @@ jobs:
       with:
         args: >
           -Dsonar.host.url=https://sonar.openbsl.ru
-          -Dsonar.sources=./src/Инструменты/src
+          -Dsonar.sources=./src
           -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
           -Dsonar.pullrequest.branch=${{ github.event.pull_request.head.ref }}
           -Dsonar.pullrequest.base=${{ github.event.pull_request.base.ref }}
@@ -80,5 +80,5 @@ jobs:
       with:
         sonar_branch_plugin: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
   
